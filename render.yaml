@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: cricket-score-predictor
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: MODEL_DIR
+        value: /app/models
+      - key: METADATA_PATH
+        value: /app/models/metadata.json
+      - key: DATABASE_URL
+        value: sqlite:////app/runtime/cricket_predictor.db
+      - key: FRONTEND_DIST
+        value: /app/frontend/dist
+      - key: SESSION_COOKIE_SECURE
+        value: "true"
+    disk:
+      name: runtime
+      mountPath: /app/runtime
+      sizeGB: 1

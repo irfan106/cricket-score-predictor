@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: 42 40% 95%;
+  --ink: 146 18% 16%;
+  --pitch: 144 39% 24%;
+  --boundary: 18 79% 47%;
+  --crease: 43 85% 63%;
+  --mist: 42 28% 89%;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-ink;
+    background:
+      radial-gradient(circle at 80% 16%, rgba(36, 78, 51, 0.08), transparent 26%),
+      radial-gradient(circle at top, rgba(210, 95, 42, 0.16), transparent 28%),
+      linear-gradient(180deg, rgba(36, 78, 51, 0.06), transparent 65%),
+      hsl(var(--paper));
+    font-family: "Inter", sans-serif;
+    font-feature-settings: "liga" 1, "kern" 1;
+    min-width: 320px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font-family: "Inter", sans-serif;
+  }
+
+  * {
+    @apply border-pitch/10;
+  }
+}
+
+@layer components {
+  .input {
+    @apply w-full rounded-2xl border border-pitch/10 bg-white px-4 py-3 font-sans text-sm text-ink shadow-sm outline-none transition;
+  }
+
+  .input:focus {
+    @apply border-pitch/35 ring-2 ring-pitch/10;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Manrope", sans-serif;
+  }
+
+  .font-body,
+  .font-sans {
+    font-family: "Inter", sans-serif;
+  }
+}

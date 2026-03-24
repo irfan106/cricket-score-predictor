@@ -1,0 +1,13 @@
+.git
+.venv
+__pycache__
+.pytest_cache
+frontend/node_modules
+frontend/dist
+data
+*.pkl
+*.db
+*.sqlite3
+!models/
+!models/*.pkl
+!models/metadata.json

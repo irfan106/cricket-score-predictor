@@ -1,0 +1,46 @@
+# Local environments
+.venv/
+.env
+.env.*
+!.env.example
+
+# Python caches
+__pycache__/
+.pytest_cache/
+pytest-cache-files-*/
+.mypy_cache/
+*.pyc
+*.pyo
+
+# Notebook caches
+.ipynb_checkpoints/
+
+# Frontend build output
+frontend/node_modules/
+frontend/dist/
+*.tsbuildinfo
+
+# Local runtime data
+runtime/
+cricket_predictor.db
+*.db
+*.sqlite3
+
+# Local datasets and scratch work
+data/
+Learning/
+
+# Training artifacts from the repository root
+/ipl_features.pkl
+/odi_features.pkl
+/t20_features.pkl
+/test_features.pkl
+/pipe_ipl.pkl
+/pipe_odi.pkl
+/pipe_t20.pkl
+/pipe_test.pkl
+
+# Deployment artifacts are allowed
+!models/
+!models/*.pkl
+!models/metadata.json

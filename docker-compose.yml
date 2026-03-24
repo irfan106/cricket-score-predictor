@@ -1,0 +1,14 @@
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    environment:
+      MODEL_DIR: /app/models
+      METADATA_PATH: /app/models/metadata.json
+      DATABASE_URL: sqlite:////app/runtime/cricket_predictor.db
+      FRONTEND_DIST: /app/frontend/dist
+    volumes:
+      - ./models:/app/models
+      - ./runtime:/app/runtime
