@@ -85,12 +85,12 @@ Steps:
 1. Push this repository to GitHub.
 2. In Render, create a new Blueprint instance from the repo.
 3. Keep the generated web service settings from `render.yaml`.
-4. Use a paid plan if you want the SQLite history database to persist, because persistent disks require a paid web service.
+4. For a free deploy, keep the service on the `free` plan.
 5. Deploy.
 
 Notes:
 
-- Render web services use an ephemeral filesystem by default. The included Blueprint attaches a persistent disk at `/app/runtime` for SQLite.
+- Free Render web services use an ephemeral filesystem. The SQLite history database will reset whenever the service redeploys, restarts, or spins down.
 - The app health check is `/api/v1/health`.
 - The container reads the platform `PORT` variable automatically.
 

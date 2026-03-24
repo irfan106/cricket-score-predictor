@@ -2,7 +2,7 @@ services:
   - type: web
     name: cricket-score-predictor
     runtime: docker
-    plan: starter
+    plan: free
     dockerfilePath: ./Dockerfile
     dockerContext: .
     healthCheckPath: /api/v1/health
@@ -19,7 +19,3 @@ services:
         value: /app/frontend/dist
       - key: SESSION_COOKIE_SECURE
         value: "true"
-    disk:
-      name: runtime
-      mountPath: /app/runtime
-      sizeGB: 1
